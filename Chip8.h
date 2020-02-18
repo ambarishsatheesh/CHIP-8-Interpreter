@@ -5,8 +5,6 @@
 #include <chrono>
 #include <random>
 
-//https://austinmorlan.com/posts/chip8_emulator/#conclusion
-
 class Chip8
 {
 public:
