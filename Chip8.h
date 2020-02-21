@@ -53,11 +53,11 @@ private:
 	//this will be default function called if proper func pointer is not set
 	void OP_NULL();
 
-//----------------------------------
-//			Opcode declarations
-//----------------------------------
-												
-	//CLS
+	//----------------------------------
+	//			Opcode declarations
+	//----------------------------------
+
+		//CLS
 	void OP_00E0();
 	//RET
 	void OP_00EE();
@@ -84,9 +84,9 @@ private:
 	//XOR Vx, Vy
 	void OP_8xy3();
 	//ADD Vx, Vy
-	void OP_8xy4();	
+	void OP_8xy4();
 	//SUB Vx, Vy
-	void OP_8xy5();	
+	void OP_8xy5();
 	//SHR Vx {, Vy}
 	void OP_8xy6();
 	//Alternate SHR Vx { , Vy }
@@ -136,7 +136,7 @@ private:
 
 	//define pointer-to-function type
 	using Chip8Func = void (Chip8::*)();
-	typedef void (Chip8::*Chip8Func)();
+	typedef void (Chip8::* Chip8Func)();
 	//index up to 0xF + 1 (16)
 	Chip8Func table[0xF + 1]{ &Chip8::OP_NULL };
 	//index up to 0xE + 1 (15)
