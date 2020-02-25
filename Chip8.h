@@ -57,7 +57,7 @@ private:
 	//			Opcode declarations
 	//----------------------------------
 
-		//CLS
+	//CLS
 	void OP_00E0();
 	//RET
 	void OP_00EE();
@@ -148,4 +148,3 @@ private:
 	//index up to 0x65 + 1 (102)
 	Chip8Func tableF[0x65 + 1]{ &Chip8::OP_NULL };
 };
-
