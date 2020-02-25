@@ -37,7 +37,7 @@ uint8_t fontset[FONT_SIZE] =
 
 
 Chip8::Chip8()
-	: randGen(CLOCKCOUNT) //randGen member initialisation list with system clock seed
+	: randGen((unsigned int)CLOCKCOUNT) //randGen member initialisation list with system clock seed
 {
 	//initialise program counter
 	pc = START_ADDRESS;
