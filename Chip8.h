@@ -41,7 +41,7 @@ private:
 
 	std::vector<uint8_t> keyList;
 
-	std::default_random_engine randGen;
+	std::mt19937 randGen;
 	std::uniform_int_distribution<int> randByte; //uint8_t not valid template parameter?
 
 	void Table0();
