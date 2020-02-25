@@ -1,8 +1,6 @@
 /*
 future changes/additions:
--smart pointers
 -better error handling
--implement toggle between both opcode variations for 8xy6, 8xye, Fx55, and Fx65
 -change hexadecimal to binary literals (C++14)
 -implement sound output
 -destructors?
