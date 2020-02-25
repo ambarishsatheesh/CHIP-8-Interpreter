@@ -14,7 +14,7 @@ public:
 	SDL_Rect Lines(int topLeftX, int topLeftY, int rectWidth, int rectHeight);
 	void Filter(const void* buffer, int pitch, int winWidth, int winHeight);
 	bool ProcessInput(bool* keys, float* pGameSpeed);
-#
+
 	uint8_t red{ 255 };
 	uint8_t green{ 255 };
 	uint8_t blue{ 255 };
@@ -24,8 +24,7 @@ public:
 	bool flag = true;
 
 private:
-	SDL_Window* window{};
+	SDL_Window * window{};
 	SDL_Renderer* renderer{};
 	SDL_Texture* texture{};
 };
-
