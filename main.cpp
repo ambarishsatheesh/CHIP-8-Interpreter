@@ -9,6 +9,7 @@
 #include <sstream>
 #include <iomanip>
 #include <ctime>
+#include <memory>
 
 
 int main(int argc, char** argv)
@@ -17,9 +18,8 @@ int main(int argc, char** argv)
 	int resScale = std::stoi(argv[1]);
 	//delay between cycles
 	float cycleDelay = 2;
-	const char* rom = argv[2];
 
-	SDL_Layer* interpreter = new SDL_Layer("CHIP-8 Interpreter", VIDEO_WIDTH * resScale, VIDEO_HEIGHT * resScale, VIDEO_WIDTH, VIDEO_HEIGHT);
+	std::unique_ptr<SDL_Layer> interpreter = std::make_unique<SDL_Layer>("CHIP-8 Interpreter", VIDEO_WIDTH * resScale, VIDEO_HEIGHT * resScale, VIDEO_WIDTH, VIDEO_HEIGHT);
 
 	//if unable to initialise SDL video/audio subsystem
 	if (interpreter->flag == false)
@@ -28,8 +28,8 @@ int main(int argc, char** argv)
 		//print error?
 	}
 
-	Chip8* chip8 = new Chip8();
-	chip8->LoadROM(rom);
+	std::unique_ptr<Chip8> chip8 = std::make_unique<Chip8>();
+	chip8->LoadROM(argv[2]);
 	chip8->speed = cycleDelay;
 
 	//SDL pitch param is the number of bytes in a row of pixel data
@@ -61,9 +61,6 @@ int main(int argc, char** argv)
 			interpreter->Update(chip8->video, videoPitch, VIDEO_WIDTH * resScale, VIDEO_HEIGHT * resScale);
 		}
 	}
-
-	delete interpreter;
-	delete chip8;
 
 	return 0;
 }
