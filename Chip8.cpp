@@ -1,12 +1,11 @@
 /*
-future changes/additions:
--better error handling
--implement toggle between both opcode variations for 8xy6, 8xye, Fx55, and Fx65
--change hexadecimal to binary literals (C++14)
--implement sound output
--destructors?
--SDL_VideoQuit/ clean up SDL subsystems upon quit (atexit)
--GUI
+TODO: better error handling
+TODO: implement toggle between both opcode variations for 8xy6, 8xye, Fx55, and Fx65
+TODO: change hexadecimal to binary literals (C++14)
+TODO: implement sound output
+TODO: destructors?
+TODO: SDL_VideoQuit/ clean up SDL subsystems upon quit (atexit)
+TODO: GUI
 */
 
 #include "Chip8.h"
