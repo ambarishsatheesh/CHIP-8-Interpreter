@@ -1,6 +1,5 @@
 /*
 future changes/additions:
--smart pointers
 -better error handling
 -implement toggle between both opcode variations for 8xy6, 8xye, Fx55, and Fx65
 -change hexadecimal to binary literals (C++14)
@@ -8,7 +7,6 @@ future changes/additions:
 -destructors?
 -SDL_VideoQuit/ clean up SDL subsystems upon quit (atexit)
 -GUI
-
 */
 
 #include "Chip8.h"
@@ -115,7 +113,7 @@ void Chip8::LoadROM(const char* filename)
 		//get current stream pos and set that as size; allocate buffer to hold contents
 		std::streampos size = file.tellg();
 
-		auto* memoryStart = &memory[START_ADDRESS];
+		auto memoryStart = &memory[START_ADDRESS];
 
 		file.seekg(0, std::ios::beg); //set pos to beg of stream
 		file.read(reinterpret_cast<char*>(memoryStart), size); //extract size characters from stream and store in memory
